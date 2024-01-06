@@ -5,4 +5,3 @@ pytest
 random
 datetime
 os
-sys
