@@ -1,3 +1,7 @@
+"""
+This is the main module for the Final Project. It contains the implementation of the Hangman game.
+"""
+
 # Final Project CS50P
 
 #
@@ -17,17 +21,12 @@
 
 
 
-
-
-
-
-import requests
-from bs4 import BeautifulSoup
-from imdb import Cinemagoer
 from datetime import date
 import random
 import os
-import sys
+from imdb import Cinemagoer
+from bs4 import BeautifulSoup
+import requests
 
 
 def main():
@@ -130,8 +129,8 @@ def game(word):
                 print()
                 break
         else:
-            for i in range(len(word)):
-                if word[i].upper() == input_letter.upper():
+            for i, letter in enumerate(word):
+                if letter.upper() == input_letter.upper():
                     word_display[i] = input_letter.upper()
 
             if "_" not in word_display:
@@ -192,13 +191,18 @@ def choose_category():
 def get_billboard_hot_100(year):
     """modified version of code found on github from "ihl7". return list of billboard top100"""
 
-    date = f"{year}-08-31"
-    url = f"https://www.billboard.com/charts/hot-100/{date}"
+    choice_date = f"{year}-08-31"
+    url = f"https://www.billboard.com/charts/hot-100/{choice_date}"
     response = requests.get(url)
     soup = BeautifulSoup(response.text, "html.parser")
     song_tags = soup.find_all(
-        "h3",
-        class_="c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis u-max-width-330 u-max-width-230@tablet-only",
+       "h3",
+       class_=(
+           "c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 "
+           "lrv-u-font-size-18@tablet lrv-u-font-size-16 u-line-height-125 "
+           "u-line-height-normal@mobile-max a-truncate-ellipsis "
+           "u-max-width-330 u-max-width-230@tablet-only"
+       ),
     )
     songs = []
     for tag in song_tags:
