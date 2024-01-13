@@ -13,22 +13,21 @@ This repository is a collection of solutions for the problem sets from the CS50P
 
 ## Overview
 
-The CS50P course covers various topics in computer science and programming using the Python language. Each problem set provided in the course focuses on different aspects of programming and problem-solving.
+The CS50 ’s Introduction to Programming with Python course covers various topics in computer science and programming using the Python language. Each problem set provided in the course focuses on different aspects of programming and problem-solving.
 
 ## Problem Sets
 
 The solutions are organized by problem set, each in its respective directory. Here is a list of the problem sets included:
 
-- Problem Set 0: Scratch
-- Problem Set 1: Python Basics
-- Problem Set 2: Arrays
-- Problem Set 3: Algorithms
-- Problem Set 4: Memory
-- Problem Set 5: Data Structures
-- Problem Set 6: Python Libraries
-- Problem Set 7: SQL
-- Problem Set 8: HTML, CSS, JavaScript
-- Problem Set 9: Flask
+- Problem Set 0: Functions, Variables
+- Problem Set 1: Conditionals
+- Problem Set 2: Loops
+- Problem Set 3: Exceptions
+- Problem Set 4: Libraries
+- Problem Set 5: Unit Tests
+- Problem Set 6: File I/O
+- Problem Set 7: Regular Expressions
+- Problem Set 8: Object-Oriented Programming
 - Final Project
 
 ## Installation
@@ -39,7 +38,11 @@ To use these solutions, you should have Python installed on your system. If you 
 
 To run a solution, navigate to the directory of the problem set and execute the Python script. For example:
 
-``` bash cd "Problem Set 1/hello" python hello.py ```
+``` bash
+cd "Problem Set 1/hello" 
+
+python hello.py
+```
 
 Replace `hello.py` with the specific solution file you wish to run.
 
