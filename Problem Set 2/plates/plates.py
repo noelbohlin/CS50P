@@ -1,17 +1,18 @@
 """ från uppgiften Vanity Plates från CS50 """
 
+
 def main():
     """
     Main function of the program.
 
-    This function takes a plate as input, checks if it's valid, 
+    This function takes a plate as input, checks if it's valid,
     and prints whether it's valid or not.
     """
-    plate = input("Plate: ").upper().strip()
-    if is_valid(plate):
+    if is_valid(input("Plate: ").upper().strip()):
         print("Valid")
     else:
         print("Invalid")
+
 
 def is_valid(s):
     """
@@ -23,10 +24,13 @@ def is_valid(s):
     Returns:
     bool: True if the string is a valid plate, False otherwise.
     """
-    return (startwith2letters(s) and
-            platelengthcorrect(s) and
-            correctcharacters(s) and
-            numberplacement(s))
+    return (
+        startwith2letters(s)
+        and platelengthcorrect(s)
+        and correctcharacters(s)
+        and numberplacement(s)
+    )
+
 
 def startwith2letters(plate):
     """
@@ -40,6 +44,7 @@ def startwith2letters(plate):
     """
     return plate[0:2].isalpha()
 
+
 def platelengthcorrect(plate):
     """
     Checks if the length of the given plate string is between 2 and 6.
@@ -52,6 +57,7 @@ def platelengthcorrect(plate):
     """
     return 2 <= len(plate) <= 6
 
+
 def correctcharacters(plate):
     """
     Checks if all characters in the given plate string are alphanumeric.
@@ -63,6 +69,7 @@ def correctcharacters(plate):
     bool: True if all characters are alphanumeric, False otherwise.
     """
     return plate.isalnum()
+
 
 def numberplacement(plate):
     """
@@ -87,5 +94,6 @@ def numberplacement(plate):
         else:
             return False
     return True
+
 
 main()

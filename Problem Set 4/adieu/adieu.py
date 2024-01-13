@@ -1,6 +1,7 @@
 # från uppgiften Adieu, Adieu från CS50
 
 import inflect
+
 p = inflect.engine()
 
 # initializes empty list

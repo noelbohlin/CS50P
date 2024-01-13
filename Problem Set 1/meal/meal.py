@@ -1,5 +1,6 @@
 """ från uppgiften Meal Time från CS50 """
 
+
 def main():
     """
     Main function of the program.
@@ -15,6 +16,7 @@ def main():
     elif 18 <= time <= 19:
         print("dinner time")
 
+
 def convert(t):
     """
     Converts the input time string to a decimal number representing the hour and minute.
@@ -27,6 +29,7 @@ def convert(t):
     t = t.removesuffix("a.m.").rstrip()
     hours, minutes = t.split(":")
     return int(hours) + (int(minutes) / 60)
+
 
 if __name__ == "__main__":
     main()

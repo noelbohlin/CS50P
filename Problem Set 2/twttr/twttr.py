@@ -1,17 +1,30 @@
-# från uppgiften just setting up my twttr från CS50
+""" från uppgiften just setting up my twttr från CS50 """
+
 
 def main():
-    s = input("Input: ")
-    s = convert(s)
-    print("Output:", s)
+    """
+    Main function of the program.
+
+    This function takes an input string, converts it by removing all vowels,
+    and prints the converted string.
+    """
+    print("Output:", convert(input("Input: ")))
+
 
 def convert(string):
+    """
+    Converts a given string by removing all vowels.
+
+    Args:
+        string (str): The input string.
+
+    Returns:
+        str: The converted string without vowels.
+    """
     output = ""
-    #checks if letter is vowel
     for letter in string:
-        # checks if each letter is vowel
-        letter = letter.rstrip("aAeEiIoOuU")
-        output += letter
+        output += letter.rstrip("aAeEiIoOuU")
     return output.strip()
+
 
 main()

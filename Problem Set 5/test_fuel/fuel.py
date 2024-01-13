@@ -1,4 +1,3 @@
-
 def main():
     while True:
         try:
@@ -14,7 +13,7 @@ def main():
 def convert(fraction):
     while True:
         try:
-            X, Y = (fraction.split("/"))
+            X, Y = fraction.split("/")
             Z = (int(X) / int(Y)) * 100
 
             if 0 <= Z <= 100:
@@ -26,6 +25,7 @@ def convert(fraction):
             raise ValueError
         except ZeroDivisionError:
             raise ZeroDivisionError
+
 
 def gauge(percentage):
     if percentage <= 1:

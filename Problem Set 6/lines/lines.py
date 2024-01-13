@@ -18,6 +18,7 @@ def valid_input():
     else:
         sys.exit("Not a Python file")
 
+
 # read lines and writes to list, one line per index
 def read_lines():
     lines = []
@@ -30,7 +31,7 @@ def read_lines():
         sys.exit("File does not exist")
 
 
-#count the number of lines and return int
+# count the number of lines and return int
 def count_lines(lines):
     number_of_lines = 0
 

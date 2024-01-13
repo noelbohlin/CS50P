@@ -1,6 +1,7 @@
 from jar import Jar
 import pytest
 
+
 def test_init():
     jar = Jar(344)
     with pytest.raises(ValueError):
@@ -24,6 +25,7 @@ def test_deposit():
     assert jar.size == 5
     with pytest.raises(ValueError):
         jar.deposit(1337)
+
 
 def test_withdraw():
     jar = Jar()

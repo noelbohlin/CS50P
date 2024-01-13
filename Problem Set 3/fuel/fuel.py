@@ -1,7 +1,13 @@
-# från upggiften Fuel Guage från CS50
+""" från upggiften Fuel Guage från CS50 """
 
 
 def main():
+    """
+    Main function of the program.
+
+    This function gets the fuel state as a fraction from the user,
+    checks the fuel state, and prints out the corresponding character or percentage.
+    """
     fuelstate = get_fraction("Fraction: ")
 
     if fuelstate <= 0.01:
@@ -9,23 +15,29 @@ def main():
     elif fuelstate >= 0.99:
         print("F")
     else:
-        fuelstate = round(fuelstate * 100)
-        print(f"{fuelstate}%")
+        print(f"{round(fuelstate * 100)}%")
 
 
 # gets decimal number from input
 def get_fraction(prompt):
+    """
+    Prompts the user for a fraction and returns it as a decimal.
+
+    Args:
+        prompt (str): The string to display as a prompt to the user.
+
+    Returns:
+        float: The decimal equivalent of the fraction entered by the user.
+    """
     while True:
-        # maybe not best to have multiple lines in here but its easier to keep track of
         try:
-            X, Y = (input(prompt).split("/"))
-            Z = int(X) / int(Y)
+            x, y = input(prompt).split("/")
+            z = int(x) / int(y)
         except (ValueError, ZeroDivisionError):
             pass
         else:
-            if Z <= 1:
-                return Z
-            else:
-                pass
+            if z <= 1:
+                return z
+
 
 main()

@@ -1,6 +1,7 @@
 # från uppgiften testing my twitter från Cs50
 from twttr import shorten
 
+
 def test_string():
     assert shorten("twitter") == "twttr"
     assert shorten("Just sEtting up my Twitter") == "Jst sttng p my Twttr"

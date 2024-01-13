@@ -1,4 +1,4 @@
-#från uppgiften Numb3rs från CS50
+# från uppgiften Numb3rs från CS50
 import re
 import sys
 
@@ -9,9 +9,14 @@ def main():
 
 def validate(ip):
     try:
-        a, b, c ,d = ip.split(".")
+        a, b, c, d = ip.split(".")
 
-        if 0 <= int(a) <= 255 and 0 <= int(b) <= 255 and 0 <= int(c) <= 255 and 0 <= int(d) <= 255:
+        if (
+            0 <= int(a) <= 255
+            and 0 <= int(b) <= 255
+            and 0 <= int(c) <= 255
+            and 0 <= int(d) <= 255
+        ):
             return True
         else:
             return False

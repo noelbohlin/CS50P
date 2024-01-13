@@ -1,4 +1,4 @@
-#från uppgiften Seasons från cS50
+# från uppgiften Seasons från cS50
 import sys
 import inflect
 

@@ -1,4 +1,4 @@
-# från uppgiften Felipe's Taqueria från CS50
+""" från uppgiften Felipe's Taqueria från CS50 """
 
 
 menu = {
@@ -10,25 +10,19 @@ menu = {
     "Super Burrito": 8.50,
     "Super Quesadilla": 9.50,
     "Taco": 3.00,
-    "Tortilla Salad": 8.00
+    "Tortilla Salad": 8.00,
 }
 
-total = 0
+TOTAL = 0
 
 while True:
     try:
         item = input("Item: ").title()
 
         if item in menu:
-            # add cost to total
-            total += menu[item]
-            # round to 2 decimals
-            total = round(total, 2)
-            # force print with 2 decimals always
-            print(f"Total: ${total:.2f}")
+            TOTAL += menu[item]
+            print(f"Total: ${TOTAL:.2f}")
 
     except EOFError:
-        # new line before break
         print()
         break
-

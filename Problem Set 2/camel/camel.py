@@ -1,11 +1,13 @@
 """ från uppgiften camelCase från CS50 """
 
+
 def main():
     """
     Main function of the program.
     Takes input from the user, converts it from camelCase to snake_case, and prints the result.
     """
     print("snake_case: ", convert(input("camelCase: ")))
+
 
 def convert(string):
     """
@@ -24,5 +26,6 @@ def convert(string):
         else:
             output += letter
     return output.lstrip("_")
+
 
 main()

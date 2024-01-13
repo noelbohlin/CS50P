@@ -2,6 +2,7 @@
 import sys, csv
 from tabulate import tabulate
 
+
 def main():
     if valid_input():
         print(tabulate(read_lines()[1:], read_lines()[0], tablefmt="grid"))

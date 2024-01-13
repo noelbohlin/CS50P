@@ -13,7 +13,6 @@ def overlay():
         # open up both pictures
         with Image.open("shirt.png") as shirt:
             with Image.open(sys.argv[1]) as image:
-
                 # get size of shirt and fits muppet to it
                 image = ImageOps.fit(image, shirt.size)
                 # overlay shirt over image

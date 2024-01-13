@@ -1,4 +1,4 @@
-# från uppgiften Outdated från CS50
+""" från uppgiften Outdated från CS50 """
 
 
 alphabetic_months = [
@@ -13,16 +13,25 @@ alphabetic_months = [
     "September",
     "October",
     "November",
-    "December"
+    "December",
 ]
 
 
 def main():
+    """
+    Main function of the program.
+    It calls the format_date function and prints the formatted date.
+    """
     y, m, d = format_date()
     print(f"{y:0004}-{m:02}-{d:02}")
 
 
 def format_date():
+    """
+    This function formats the date entered by the user.
+    It first tries to split the input by "/", then by space.
+    If the input is not in either format, it returns None.
+    """
     while True:
         inputdate = input("Date: ").strip()
         # try for the date with / separator, then int the input and check for validity
@@ -35,8 +44,6 @@ def format_date():
         # if input isn't / then try for alphabetick month
         except Exception:
             try:
-                # this line is needed to not accept more than the problem says
-                # i would remove this if it wasnt needed for the check50
                 if not "," in inputdate:
                     return gibberish
 
@@ -52,5 +59,6 @@ def format_date():
                 pass
 
     return year, month, day
+
 
 main()
