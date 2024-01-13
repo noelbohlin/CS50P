@@ -1,4 +1,4 @@
-#från uppgiften File Extensions från CS50
+""" från uppgiften File Extensions från CS50 """
 
 file_name = input("File name: ").rstrip().lower()
 

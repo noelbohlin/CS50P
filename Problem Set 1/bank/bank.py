@@ -1,4 +1,4 @@
-# från uppgiften Home Federal savings bank från CS50
+""" från uppgiften Home Federal savings bank från CS50 """
 
 phrase = input("Greeting: ").lstrip().lower()
 

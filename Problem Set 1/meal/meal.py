@@ -1,10 +1,7 @@
-#
-# från uppgiften Meal Time från CS50
-#
+""" från uppgiften Meal Time från CS50 """
 
 def main():
-    time = input("What time is is? ").strip().lower()
-    time = convert(time)
+    time = convert(input("What time is is? ").strip().lower())
 
     if 7 <= time <= 8:
         print("breakfast time")
@@ -13,23 +10,14 @@ def main():
     elif 18 <= time <= 19:
         print("dinner time")
 
-# * converts from hh:mm to hour in decimal form
-
 def convert(t):
     if t.endswith("p.m."):
-        # removes suffixes and whitespace
-        t = t.removesuffix("p.m.").rstrip()
-        hours, minutes = t.split(":")
-        # * p.m. to 24h conversion and conversion to decimal
-        t = int(hours) + (int(minutes) / 60) + 12
-        return t
-    else:
-        # removes possible suffixes and whitespace
-        t = t.removesuffix("a.m.").rstrip()
-        hours, minutes = t.split(":")
-        t = int(hours) + (int(minutes) / 60)
-        return t
+        hours, minutes = t.removesuffix("p.m.").rstrip().split(":")
+        return int(hours) + (int(minutes) / 60) + 12
 
-# ! what does line 34 mean?
+    t = t.removesuffix("a.m.").rstrip()
+    hours, minutes = t.split(":")
+    return int(hours) + (int(minutes) / 60)
+
 if __name__ == "__main__":
     main()

@@ -1,4 +1,4 @@
-# från uppgiften Math Interpreter från CS50
+""" från uppgiften Math Interpreter från CS50 """
 
 x, y, z = input("Expression: ").split(" ")
 
