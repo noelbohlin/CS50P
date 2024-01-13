@@ -1,8 +1,9 @@
-# från uppgiften response validation från cs50
+""" från uppgiften response validation från cs50 """
 
 import validators
 
-if validators.email(input("What's your email address? ")) == True:
+if validators.email(input("What's your email address? ")):
     print("Valid")
 else:
     print("Invalid")
+    

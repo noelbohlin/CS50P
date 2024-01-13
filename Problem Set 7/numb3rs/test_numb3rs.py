@@ -1,7 +1,12 @@
+""" Från uppgiften numbers från CS50 """
+
 from numb3rs import validate
 
 
 def test_length():
+    """
+    Tests the length of the IP address.
+    """
     assert validate("10.135.125.5")
     assert not validate("1.1.1")
     assert not validate("1.1.1.1.1")
@@ -10,6 +15,9 @@ def test_length():
 
 
 def test_range():
+    """
+    This function tests the range of the IP address.
+    """
     assert validate("0.0.0.0")
     assert validate("255.255.255.255")
     assert not validate("256.10.10.10")
