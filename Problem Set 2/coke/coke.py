@@ -1,18 +1,15 @@
-# från uppgiften Coke Maschine från CS50
+""" från uppgiften Coke Maschine från CS50 """
 
-due = 50
-print(f"Amount Due: {due}")
+DUE = 50
+print(f"Amount Due: {DUE}")
 
-while due > 0:
-
+while DUE > 0:
     n = int(input("Insert Coin: "))
-    # if its the correct coins, update value, else, just keep going
-    if n == 25 or n == 10 or n == 5:
-        due = due - n
+    if n in (25, 10, 5):
+        DUE -= n
 
-    # if the cokes paid for, display possible change. else, restart loop
-    if due <= 0:
-        owed = due * -1
+    if DUE <= 0:
+        owed = DUE * -1
         print(f"Change Owed: {owed}")
     else:
-        print(f"Amount Due: {due}")
+        print(f"Amount Due: {DUE}")

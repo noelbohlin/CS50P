@@ -1,5 +1,4 @@
-# från uppgiften Nutrition Facts från CS50
-
+""" från uppgiften Nutrition Facts från CS50 """
 
 fruits = {
     "apple": 130,
@@ -25,6 +24,5 @@ fruits = {
 }
 
 choice = input("Item: ").lower().strip()
-
 if choice in fruits:
     print("Calories: ", fruits[choice])

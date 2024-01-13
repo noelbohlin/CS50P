@@ -1,63 +1,91 @@
-# från uppgiften Vanity Plates från CS50
-
-
-# måste börja med 2 bokstäver
-# måste vara mellan 2 och 6 karaktärer långt
-# måste vara antingen bokstäver eller siffror
-# första siffran som förekommer får inte vara en 0a
-# efter första siffran får inga bokstäver förekomma
+""" från uppgiften Vanity Plates från CS50 """
 
 def main():
+    """
+    Main function of the program.
+
+    This function takes a plate as input, checks if it's valid, 
+    and prints whether it's valid or not.
+    """
     plate = input("Plate: ").upper().strip()
     if is_valid(plate):
         print("Valid")
     else:
         print("Invalid")
 
-# * is the plate valid. return bool
-
 def is_valid(s):
-    if startwith2letters(s) and platelengthcorrect(s) and correctcharacters(s) and numberplacement(s):
-        return True
-    else:
-        return False
+    """
+    Checks if the given string s is a valid plate.
 
-# is the first to characters letter, return bool
+    Parameters:
+    s (str): The string to check.
+
+    Returns:
+    bool: True if the string is a valid plate, False otherwise.
+    """
+    return (startwith2letters(s) and
+            platelengthcorrect(s) and
+            correctcharacters(s) and
+            numberplacement(s))
+
 def startwith2letters(plate):
+    """
+    Checks if the given plate string starts with exactly 2 letters.
+
+    Parameters:
+    plate (str): The plate string to check.
+
+    Returns:
+    bool: True if the plate string starts with exactly 2 letters, False otherwise.
+    """
     return plate[0:2].isalpha()
 
-# lenght of plate
 def platelengthcorrect(plate):
+    """
+    Checks if the length of the given plate string is between 2 and 6.
+
+    Parameters:
+    plate (str): The plate string to check.
+
+    Returns:
+    bool: True if the length of the plate string is between 2 and 6, False otherwise.
+    """
     return 2 <= len(plate) <= 6
 
-# is it alphanumeric characters, ie no specialcharacters
 def correctcharacters(plate):
+    """
+    Checks if all characters in the given plate string are alphanumeric.
+
+    Parameters:
+    plate (str): The plate string to check.
+
+    Returns:
+    bool: True if all characters are alphanumeric, False otherwise.
+    """
     return plate.isalnum()
 
-# is any number followed by a letter
-# is the first number a "0"
 def numberplacement(plate):
-    # intizialize bool variable
+    """
+    Checks the placement of numbers in the given plate string.
+
+    Parameters:
+    plate (str): The plate string to check.
+
+    Returns:
+    bool: True if the placement of numbers is valid, False otherwise.
+    """
     numberfound = False
-
-    # checks each character in order left to right
     for character in plate:
-
-        # checks if first number is 0, returns false in that case
         if character.isdigit():
-
             if character == "0":
-                if numberfound == False:
+                if not numberfound:
                     return False
             numberfound = True
-
-        # checks if letter comes after a number, returns false
         elif character.isalpha():
             if numberfound:
                 return False
         else:
             return False
     return True
-
 
 main()

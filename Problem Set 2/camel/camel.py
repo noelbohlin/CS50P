@@ -1,22 +1,28 @@
-# från uppgiften camelCase från CS50
+""" från uppgiften camelCase från CS50 """
+
 def main():
-    s = input("camelCase: ")
-    s = convert(s)
-    print("snake_case: ", s)
+    """
+    Main function of the program.
+    Takes input from the user, converts it from camelCase to snake_case, and prints the result.
+    """
+    print("snake_case: ", convert(input("camelCase: ")))
 
 def convert(string):
-    #clears output varible
+    """
+    Converts a camelCase string to snake_case.
+
+    Parameters:
+    string (str): The camelCase string to convert.
+
+    Returns:
+    str: The converted snake_case string.
+    """
     output = ""
-    # checks each letter and writes it in output variable
     for letter in string:
         if letter.isupper():
-            # if letter is uppercase it adds a underscore to the end of the output variable and then adds the letter in lowercase
             output += "_" + letter.lower()
         else:
-            # else it adds the letter to the end of the output variable
             output += letter
-    # removes extra underscores from the begining of words
-    output = output.lstrip("_")
-    return output
+    return output.lstrip("_")
 
 main()
