@@ -1,12 +1,12 @@
-# från uppgiften Bitcoin Price Index från CS50
+""" från uppgiften Bitcoin Price Index från CS50 """
 
-import requests
 import sys
+import requests
 
 # make sure the input "n" is correct
 try:
     n = float(sys.argv[1])
-except Exception:
+except ValueError:
     if len(sys.argv) != 2:
         sys.exit("Missing command-line argument")
     else:
@@ -19,5 +19,4 @@ try:
 except requests.RequestException:
     sys.exit("Request-failure")
 
-# prints rate * input with the right formating
 print(f"${(rate * n):,.4f}")

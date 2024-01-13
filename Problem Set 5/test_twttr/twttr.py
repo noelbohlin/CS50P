@@ -1,16 +1,26 @@
+""" Från uppgiften Test Twitter från CS50 """
+
 def main():
-    s = input("Input: ")
-    s = shorten(s)
-    print("Output:", s)
+    """
+    Main function of the program. Takes an input string, shortens it by removing all vowels, 
+    and prints the result.
+    """
+    print("Output:", shorten(input("Input: ")))
 
 
 def shorten(word):
+    """
+    Shortens the given word by removing all vowels.
+
+    Parameters:
+    word (str): The word to be shortened.
+
+    Returns:
+    str: The shortened word.
+    """
     output = ""
-    # checks if letter is vowel
     for letter in word:
-        # checks if each letter is vowel
-        letter = letter.rstrip("aAeEiIoOuU")
-        output += letter
+        output += letter.rstrip("aAeEiIoOuU")
     return output.strip()
 
 

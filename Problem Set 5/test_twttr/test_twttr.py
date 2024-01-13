@@ -1,8 +1,12 @@
-# från uppgiften testing my twitter från Cs50
+""" från uppgiften testing my twitter från Cs50 """
+
 from twttr import shorten
 
 
 def test_string():
+    """
+    Tests the shorten function with various inputs.
+    """
     assert shorten("twitter") == "twttr"
     assert shorten("Just sEtting up my Twitter") == "Jst sttng p my Twttr"
     assert shorten("2024") == "2024"

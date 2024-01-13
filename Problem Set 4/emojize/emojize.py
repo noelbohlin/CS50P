@@ -1,7 +1,5 @@
-# från uppgiften emojize från CS50
+""" från uppgiften emojize från CS50 """
 
 import emoji
 
-phrase = input("Input: ")
-
-print("Output:", emoji.emojize(phrase, language="alias"))
+print("Output:", emoji.emojize(input("Input: "), language="alias"))

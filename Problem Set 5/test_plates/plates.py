@@ -1,11 +1,19 @@
-# måste börja med 2 bokstäver
-# måste vara mellan 2 och 6 karaktärer långt
-# måste vara antingen bokstäver eller siffror
-# första siffran som förekommer får inte vara en 0a
-# efter första siffran får inga bokstäver förekomma
-
+""" måste börja med 2 bokstäver
+    måste vara mellan 2 och 6 karaktärer långt
+    måste vara antingen bokstäver eller siffror
+    första siffran som förekommer får inte vara en 0a
+    efter första siffran får inga bokstäver förekomma
+"""
 
 def main():
+    """
+    Main function of the program.
+
+    Takes user input for a license plate, converts it to uppercase, 
+    strips leading and trailing whitespace,
+    and checks if it's valid according to certain conditions. 
+    Prints "Valid" if the plate is valid, "Invalid" otherwise.
+    """
     plate = input("Plate: ").upper().strip()
     if is_valid(plate):
         print("Valid")
@@ -13,10 +21,16 @@ def main():
         print("Invalid")
 
 
-# * is the plate valid. return bool
-
-
 def is_valid(s):
+    """
+    Checks if the given string is valid according to certain conditions.
+
+    Parameters:
+    s (str): The string to check.
+
+    Returns:
+    bool: True if the string is valid, False otherwise.
+    """
     if (
         startwith2letters(s)
         and platelengthcorrect(s)
@@ -24,41 +38,66 @@ def is_valid(s):
         and numberplacement(s)
     ):
         return True
-    else:
-        return False
+    return False
 
 
-# is the first to characters letter, return bool
 def startwith2letters(plate):
+    """
+    Checks if the given plate starts with two letters.
+
+    Parameters:
+    plate (str): The license plate string.
+
+    Returns:
+    bool: True if the plate starts with two letters, False otherwise.
+    """
     return plate[0:2].isalpha()
 
 
-# lenght of plate
 def platelengthcorrect(plate):
+    """
+    Checks if the length of the plate is between 2 and 6 characters.
+
+    Parameters:
+    plate (str): The license plate string.
+
+    Returns:
+    bool: True if the length is correct, False otherwise.
+    """
     return 2 <= len(plate) <= 6
 
 
-# is it alphanumeric characters, ie no specialcharacters
 def correctcharacters(plate):
+    """
+    Checks if the given plate consists of alphanumeric characters only.
+
+    Parameters:
+    plate (str): The license plate string.
+
+    Returns:
+    bool: True if the plate consists of alphanumeric characters only, False otherwise.
+    """
     return plate.isalnum()
 
 
-# is any number followed by a letter
-# is the first number a "0"
 def numberplacement(plate):
-    # intizialize bool variable
+    """
+    Checks the placement of numbers in the given plate.
+
+    Parameters:
+    plate (str): The license plate string.
+
+    Returns:
+    bool: True if the placement of numbers is correct, False otherwise.
+    """
     numberfound = False
 
-    # checks each character in order left to right
     for character in plate:
-        # checks if first number is 0, returns false in that case
         if character.isdigit():
             if character == "0":
-                if numberfound == False:
+                if not numberfound:
                     return False
             numberfound = True
-
-        # checks if letter comes after a number, returns false
         elif character.isalpha():
             if numberfound:
                 return False
