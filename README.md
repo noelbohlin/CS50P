@@ -60,6 +60,6 @@ If you have suggestions for improving the solutions, please feel free to fork th
 
 ## License
 
-These solutions are provided for educational purposes only. Please adhere to the [CS50 Academic Honesty policy](https://cs50.harvard.edu/college/2021/fall/syllabus/#academic-honesty). Unauthorized distribution or use of these solutions is prohibited.
+These solutions are provided for educational purposes only. Please adhere to the [CS50 Academic Honesty policy](https://cs50.harvard.edu/python/2022/honesty/). Unauthorized distribution or use of these solutions is prohibited.
 
-This project is licensed under the MIT License - see the LICENSE file for details
+This project is licensed under the MIT License - see [LICENSE](https://cs50.harvard.edu/python/2022/license/) for details
