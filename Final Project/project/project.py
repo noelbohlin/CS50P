@@ -1,15 +1,6 @@
 """
-This is the main module for the Final Project. It contains the implementation of the Hangman game.
+This is the main module for the Final Project in CS50 Python. It contains the implementation of the Hangman game.
 """
-
-# Final Project CS50P
-
-#
-# Noel Bohlin
-#
-
-
-
 
 
 # * Title: Popculture Hangman
@@ -52,10 +43,10 @@ def draw_man(n):
     print()
     print("\t +-------+")
     print("\t |       | ")
-    print("\t {}       | ".format(n[0]))
-    print("\t{}{}{}      | ".format(n[1], n[2], n[3]))
-    print("\t {}       | ".format(n[4]))
-    print("\t{} {}      | ".format(n[5], n[6]))
+    print(f"\t {n[0]}      | ")
+    print(f"\t{n[1]}{n[2]}{n[3]}     | ")
+    print(f"\t {n[4]}      | ")
+    print(f"\t{n[5]} {n[6]}     | ")
     print("\t         | ")
     print("  _______________|____")
     print("  ````````````````````")
@@ -150,6 +141,7 @@ def get_word():
         return word_list[random.randint(0, 24)]
     if chosen_difficulty == "full":
         return word_list[random.randint(0, (len(word_list) - 1))]
+    raise ValueError("Invalid difficulty level")
 
 
 def difficulty():
@@ -158,11 +150,10 @@ def difficulty():
     while True:
         choice = input(
             'Choose difficulty, "Top25" or "Full": ').strip().lower()
-        if choice == "top25" or choice == "full":
+        if choice in ("top25", "full"):
             clear()
             return choice
-        else:
-            print("Please try again")
+        print("Please try again")
 
 
 def choose_category():
@@ -178,14 +169,12 @@ def choose_category():
                 ).strip()
                 if 1957 < int(year) < int(today()):
                     return get_billboard_hot_100(year)
-                else:
-                    print(
-                        "year (YYYY) has to be between 1958 and the year before this year"
-                    )
+                print(
+                    "year (YYYY) has to be between 1958 and the year before this year"
+                )
         if category == "movies":
             return get_imdb_top250()
-        else:
-            continue
+        continue
 
 
 def get_billboard_hot_100(year):
