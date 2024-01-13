@@ -34,18 +34,16 @@ def format_date():
     """
     while True:
         inputdate = input("Date: ").strip()
-        # try for the date with / separator, then int the input and check for validity
         try:
             month, day, year = inputdate.split("/")
             month, day, year = int(month), int(day), int(year)
 
             if 0 < month <= 12 and 0 < day <= 31 and year > 0:
                 break
-        # if input isn't / then try for alphabetick month
-        except Exception:
+        except (ValueError, IndexError) as e:
             try:
                 if not "," in inputdate:
-                    return gibberish
+                    raise ValueError from e
 
                 month, day, year = inputdate.split(" ")
                 month, day, year = month.title(), int(day.rstrip(",")), int(year)
@@ -55,7 +53,7 @@ def format_date():
 
                     if 0 < month <= 12 and 0 < day <= 31 and year > 0:
                         break
-            except Exception:
+            except (ValueError, IndexError):
                 pass
 
     return year, month, day
