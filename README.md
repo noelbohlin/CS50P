@@ -34,6 +34,14 @@ The solutions are organized by problem set, each in its respective directory. He
 
 To use these solutions, you should have Python installed on your system. If you don't have Python installed, visit [python.org](https://www.python.org/) to download and install the latest version.
 
+In addition to Python, some third-party libraries are also used in these solutions. These libraries are listed in the `requirements.txt` file in the root directory of this repository. You can install all required libraries by running the following command in your terminal:
+
+``` bash
+pip install -r requirements.txt
+```
+
+Please ensure that you have pip installed and that you run this command in the same environment where you plan to run the solutions.
+
 ## Usage
 
 To run a solution, navigate to the directory of the problem set and execute the Python script. For example:

@@ -1,0 +1,16 @@
+requests
+bs4
+git+https://github.com/cinemagoer/cinemagoer
+pytest
+random
+datetime
+os
+sys
+csv
+re
+inflect
+emoji
+pyfiglet
+tabulate
+PIL
+validators
