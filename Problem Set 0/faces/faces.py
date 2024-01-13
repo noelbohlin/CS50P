@@ -1,10 +1,8 @@
 # från uppgiften Making Faces från CS50
 def main():
-    text = input()
-    print(convert(text))
+    print(convert(input()))
 
 def convert(emoticon):
-    emoticon = emoticon.replace(":)", "🙂").replace(":(", "🙁")
-    return emoticon
+    return emoticon.replace(":)", "🙂").replace(":(", "🙁") 
 
 main()
