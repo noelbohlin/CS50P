@@ -1,17 +1,32 @@
-# Från uppgiften Pizza Py från CS50
-import sys, csv
+""" Från uppgiften Pizza Py från CS50 """
+import sys
+import csv
 from tabulate import tabulate
 
 
 def main():
+    """
+    Main function of the program.
+
+    This function first checks if the input is valid using the valid_input() function.
+    If the input is valid, it reads the lines from the CSV file using the read_lines() function
+    and prints them in a tabular format.
+    """
     if valid_input():
         print(tabulate(read_lines()[1:], read_lines()[0], tablefmt="grid"))
 
 
 def read_lines():
+    """
+    Reads lines from a CSV file.
+
+    Returns:
+        list: A list of rows from the CSV file.
+    """
     lines = []
+
     try:
-        with open(sys.argv[1]) as file:
+        with open(sys.argv[1], encoding="utf-8") as file:
             reader = csv.reader(file)
             for row in reader:
                 lines.append(row)
@@ -21,14 +36,19 @@ def read_lines():
 
 
 def valid_input():
+    """
+    Checks if the input is valid.
+
+    Returns:
+        bool: True if the input is valid, False otherwise.
+    """
     if len(sys.argv) < 2:
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
     if ".csv" in sys.argv[1]:
         return True
-    else:
-        sys.exit("Not a CSV file")
+    sys.exit("Not a CSV file")
 
 
 if __name__ == "__main__":
