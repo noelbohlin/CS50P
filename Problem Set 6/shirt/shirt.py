@@ -5,23 +5,11 @@ from PIL import Image, ImageOps
 
 
 def main():
-    """
-    Main function of the program.
-
-    This function checks if the input is valid and then calls the overlay function.
-    """
     if valid_input():
         overlay()
 
 
 def overlay():
-    """
-    Overlays the shirt image onto another image.
-
-    This function opens the shirt image and the input image, 
-    resizes the input image to fit the size of the shirt, 
-    pastes the shirt onto the input image, and saves the result.
-    """
     try:
         with Image.open("shirt.png") as shirt:
             with Image.open(sys.argv[1]) as image:
@@ -33,10 +21,6 @@ def overlay():
 
 
 def valid_input():
-    """
-    Validates the command-line arguments passed to the script.
-    Checks if the number of arguments is correct and if the input and output formats are supported.
-    """
     input_format = sys.argv[1].split(".")[1].lower()
     output_format = sys.argv[2].split(".")[1].lower()
     supported_formats = ["jpg", "png", "jpeg"]
