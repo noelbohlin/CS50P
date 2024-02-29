@@ -5,10 +5,6 @@ import sys
 
 
 def main():
-    """
-    Main function of the program. Tries to convert the input hours to a 24-hour format.
-    Exits the program with a ValueError if the input is invalid.
-    """
     try:
         print(convert(input("Hours: ")))
     except ValueError:
@@ -16,10 +12,6 @@ def main():
 
 
 def convert(s):
-    """
-    Converts a time string in the format "HH:MM AM/PM to HH:MM AM/PM" to a 24-hour format.
-    Raises ValueError if the input is invalid.
-    """
     if s := re.search(
         r"^(\d{1,2}):?(\d{2})? (AM|PM) to (\d{1,2}):?(\d{2})? (AM|PM)$", s
     ):
