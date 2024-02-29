@@ -21,8 +21,6 @@ import requests
 
 
 def main():
-    """main"""
-
     # print welcome message
     intro()
 
@@ -58,7 +56,6 @@ def game(word):
 
     clear()
 
-    # inizializes variabels
     word_display = []
     correct_letters = []
     incorrect = []
@@ -133,8 +130,6 @@ def game(word):
 
 
 def get_word():
-    """gets word from provided list"""
-
     word_list = choose_category()
     chosen_difficulty = difficulty()
     if chosen_difficulty == "top25":
@@ -145,8 +140,6 @@ def get_word():
 
 
 def difficulty():
-    """return difficulty"""
-
     while True:
         choice = input(
             'Choose difficulty, "Top25" or "Full": ').strip().lower()
@@ -157,8 +150,6 @@ def difficulty():
 
 
 def choose_category():
-    """choose category between movies and songs, returns list with words"""
-
     while True:
         category = input(
             'Choose category, "Music" or "Movies": ').lower().strip()
@@ -200,20 +191,14 @@ def get_billboard_hot_100(year):
 
 
 def get_imdb_top250():
-    """returns list of top250 from imdb"""
-
     return Cinemagoer().get_top250_movies()
 
 
 def today():
-    """returns this year"""
-
     return date.today().year
 
 
 def clear():
-    """clears the terminal window"""
-
     os.system("clear")
 
 
