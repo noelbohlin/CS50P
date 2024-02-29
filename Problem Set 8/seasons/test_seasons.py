@@ -5,9 +5,6 @@ import pytest
 
 
 def test_seasons():
-    """
-    Tests the functionality of the convert function.
-    """
     assert (
         convert(2003, 5, 31)
         == "Ten million, eight hundred thirty-three thousand, one hundred twenty minutes"
