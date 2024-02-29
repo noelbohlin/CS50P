@@ -1,12 +1,9 @@
 """ från uppgiften Deep Thought från CS50 """
 
-answer = (
-    input(
+answer = (input(
         "What is the Answer to the Great Question of Life, "
         "the Universe and Everything? "
-    )
-    .strip()
-    .title()
+    ).strip().title()
 )
 
 match answer:
