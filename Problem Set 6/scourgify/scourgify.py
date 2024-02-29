@@ -5,18 +5,11 @@ import sys
 
 
 def main():
-    """
-    Main function of the program.
-    Calls the convert function if the input is valid.
-    """
     if valid_input():
         convert()
 
 
 def convert():
-    """
-    Converts the input CSV file to a new format.
-    """
     try:
         with open(sys.argv[1], encoding='utf-8') as file:
             reader = csv.DictReader(file)
@@ -38,11 +31,6 @@ def convert():
 
 
 def valid_input():
-    """
-    Checks if the correct number of command-line arguments are provided and if they are CSV files.
-    Returns True if the input is valid, 
-    otherwise exits the program with an appropriate error message.
-    """
     if len(sys.argv) < 3:
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 3:
