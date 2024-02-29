@@ -6,14 +6,6 @@
 """
 
 def main():
-    """
-    Main function of the program.
-
-    Takes user input for a license plate, converts it to uppercase, 
-    strips leading and trailing whitespace,
-    and checks if it's valid according to certain conditions. 
-    Prints "Valid" if the plate is valid, "Invalid" otherwise.
-    """
     plate = input("Plate: ").upper().strip()
     if is_valid(plate):
         print("Valid")
@@ -22,15 +14,6 @@ def main():
 
 
 def is_valid(s):
-    """
-    Checks if the given string is valid according to certain conditions.
-
-    Parameters:
-    s (str): The string to check.
-
-    Returns:
-    bool: True if the string is valid, False otherwise.
-    """
     if (
         startwith2letters(s)
         and platelengthcorrect(s)
@@ -42,54 +25,18 @@ def is_valid(s):
 
 
 def startwith2letters(plate):
-    """
-    Checks if the given plate starts with two letters.
-
-    Parameters:
-    plate (str): The license plate string.
-
-    Returns:
-    bool: True if the plate starts with two letters, False otherwise.
-    """
     return plate[0:2].isalpha()
 
 
 def platelengthcorrect(plate):
-    """
-    Checks if the length of the plate is between 2 and 6 characters.
-
-    Parameters:
-    plate (str): The license plate string.
-
-    Returns:
-    bool: True if the length is correct, False otherwise.
-    """
     return 2 <= len(plate) <= 6
 
 
 def correctcharacters(plate):
-    """
-    Checks if the given plate consists of alphanumeric characters only.
-
-    Parameters:
-    plate (str): The license plate string.
-
-    Returns:
-    bool: True if the plate consists of alphanumeric characters only, False otherwise.
-    """
     return plate.isalnum()
 
 
 def numberplacement(plate):
-    """
-    Checks the placement of numbers in the given plate.
-
-    Parameters:
-    plate (str): The license plate string.
-
-    Returns:
-    bool: True if the placement of numbers is correct, False otherwise.
-    """
     numberfound = False
 
     for character in plate:
