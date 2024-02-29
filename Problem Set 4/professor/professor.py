@@ -4,12 +4,6 @@ import random
 
 
 def main():
-    """
-    Main function of the program.
-
-    This function gets the level of difficulty from the user, generates 10 pairs of random integers,
-    and checks if the user's answers are correct.
-    """
     level = get_level()
     correct_answers = 0
 
@@ -47,12 +41,6 @@ def main():
 
 
 def get_level():
-    """
-    Prompts the user to enter a level and validates the input.
-
-    Returns:
-        int: The level entered by the user.
-    """
     while True:
         try:
             n = int(input("Level: "))
@@ -64,15 +52,6 @@ def get_level():
 
 
 def generate_integer(level):
-    """
-    Generates a random integer based on the given level.
-
-    Args:
-        level (int): The level of difficulty. Must be between 1 and 3.
-
-    Returns:
-        int: A random integer within the appropriate range for the given level.
-    """
     if level == 1:
         return random.randint(0, 9)
     if level == 2:
