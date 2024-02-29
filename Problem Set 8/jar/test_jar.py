@@ -5,9 +5,6 @@ import pytest
 
 
 def test_init():
-    """
-    This function tests the initialization of the Jar class.
-    """
     jar = Jar(344)
     assert jar.size == 344
     with pytest.raises(ValueError):
@@ -15,9 +12,6 @@ def test_init():
 
 
 def test_str():
-    """
-    This function tests the string representation of the Jar class.
-    """
     jar = Jar()
     assert str(jar) == ""
 
@@ -29,9 +23,6 @@ def test_str():
 
 
 def test_deposit():
-    """
-    Test the deposit method of the Jar class.
-    """
     jar = Jar()
     jar.deposit(5)
     assert jar.size == 5
@@ -40,9 +31,6 @@ def test_deposit():
 
 
 def test_withdraw():
-    """
-    Test the withdraw method of the Jar class.
-    """
     jar = Jar()
 
     jar.deposit(5)
