@@ -18,20 +18,11 @@ alphabetic_months = [
 
 
 def main():
-    """
-    Main function of the program.
-    It calls the format_date function and prints the formatted date.
-    """
     y, m, d = format_date()
     print(f"{y:0004}-{m:02}-{d:02}")
 
 
 def format_date():
-    """
-    This function formats the date entered by the user.
-    It first tries to split the input by "/", then by space.
-    If the input is not in either format, it returns None.
-    """
     while True:
         inputdate = input("Date: ").strip()
         try:
