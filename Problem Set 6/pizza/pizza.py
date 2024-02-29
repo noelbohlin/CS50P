@@ -5,24 +5,11 @@ from tabulate import tabulate
 
 
 def main():
-    """
-    Main function of the program.
-
-    This function first checks if the input is valid using the valid_input() function.
-    If the input is valid, it reads the lines from the CSV file using the read_lines() function
-    and prints them in a tabular format.
-    """
     if valid_input():
         print(tabulate(read_lines()[1:], read_lines()[0], tablefmt="grid"))
 
 
 def read_lines():
-    """
-    Reads lines from a CSV file.
-
-    Returns:
-        list: A list of rows from the CSV file.
-    """
     lines = []
 
     try:
@@ -36,12 +23,6 @@ def read_lines():
 
 
 def valid_input():
-    """
-    Checks if the input is valid.
-
-    Returns:
-        bool: True if the input is valid, False otherwise.
-    """
     if len(sys.argv) < 2:
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 2:
